@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name davidendx.github.io;
+
+    location / {
+        proxy_pass http://191.96.11.200:443;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
